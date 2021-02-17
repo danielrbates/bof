@@ -18,8 +18,9 @@
 * In Immunity Debugger, run findmsp:
 ```!mona findmsp -distance <string>```
 * Locate "EIP contains normal pattern: <> (offset <>)"
+* Note EIP and ESP registers
 * Update exploit.py with new values:
-  * Set offset variable value in exploit.py to ESP value
+  * Set offset variable value in exploit.py to EIP offset value
   * Set payload to empty string
   * Set retn variable to 'BBBB'
 * Relaunch target.exe and run exploit.py
