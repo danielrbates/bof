@@ -10,7 +10,7 @@
 * In Kali, create the fuzzer.py script and execute
 * Note the size of the largest string sent
 * Create a cyclic payload with pattern_create.rb, 400 bytes longer than crashing string size:
-```$ /usr/share/metasploit-framework/tools/exploit/pattern_create.rb -l <string+400>```
+```$ msf-pattern_create -l <string+400>```
 * Create exploit.py with the generated payload
 		
 ## Control EIP
