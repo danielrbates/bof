@@ -3,7 +3,7 @@
 import socket, time, sys
 
 ip = "10.1.1.1"
-port = "1337"
+port = 1337
 timeout = 5
 
 buffer = []
