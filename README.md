@@ -16,7 +16,7 @@
 ## Control EIP
 * Relaunch target.exe and run exploit.py
 * In Immunity Debugger, run findmsp:
-```!mona findmsp -distance <string>```
+```!mona findmsp -distance <string+400>```
 * Locate "EIP contains normal pattern: <> (offset <>)"
 * Note EIP and ESP registers
 * Update exploit.py with new values:
