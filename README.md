@@ -46,6 +46,7 @@ print()
 
 ### Iteration 1..n of n
 * Reload target.exe and run exploit.py
+* Note the ESP address
 * Run !mona compare with the ESP address
 ```!mona compare -f C:\mona\*\bytearray.bin -a <ESPaddress>```
 * Generate a new bytearray in Mona, excluding all badchars from the comparison result:
