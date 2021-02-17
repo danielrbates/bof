@@ -27,7 +27,7 @@
 * EIP should now be overwritten with 42424242
 
 ## Find Bad Characters
-### Iteration 0
+#### Iteration 0
 * Create a bytearray in Mona:
 ```!mona bytearray -b "\x00"```
 
@@ -44,7 +44,7 @@ print()
 ```
 * Update payload variable in exploit.py with badchars string
 
-### Iteration 1..n of n
+#### Iteration 1..n of n
 * Reload target.exe and run exploit.py
 * Note the ESP address
 * Run !mona compare with the ESP address
