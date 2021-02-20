@@ -18,7 +18,8 @@
 * In Immunity Debugger, run findmsp:
 ```!mona findmsp -distance <string+400>```
 * Locate "EIP contains normal pattern: <> (offset <>)"
-* Note EIP and ESP registers
+* Alternate technique: Copy contents of EIP and find offset with msf-pattern_offset:
+```$ msf-pattern_offset -l <string+400> -q <EIP>```
 * Update exploit.py with new values:
   * Set offset variable value in exploit.py to EIP offset value
   * Set payload to empty string
@@ -27,7 +28,6 @@
 * EIP should now be overwritten with 42424242
 
 ## Find Bad Characters
-#### Iteration 0
 * Create a bytearray in Mona:
 ```!mona bytearray -b "\x00"```
 
@@ -43,20 +43,16 @@ for x in range(1, 256):
 print()
 ```
 * Update payload variable in exploit.py with badchars string
-
-#### Iteration 1..n of n
 * Reload target.exe and run exploit.py
 * Note the ESP address
 * Run !mona compare with the ESP address
 ```!mona compare -f C:\mona\*\bytearray.bin -a <ESPaddress>```
 * Generate a new bytearray in Mona, excluding all badchars from the comparison result:
 ```!mona bytearray -b "\x00\x07\x2e\xa0"```
-	
-_Note: don't include sequential characters_
-
 * Remove badchars from exploit.py:
 ```payload = "<all non-bad characters>"```
 *  All bad characters identified when result: "Unmodified"
+*  Alternate technique: right-click ESP and select "Follow in Dump".  Inspect hexdump to find missing characters and iterate.
 
 ## Jump Point
 * Run !mona jmp to identify all jump points with addresses that don't contain badchars:
