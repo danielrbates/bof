@@ -2,11 +2,14 @@
 
 import socket, time, sys
 
+ip = "10.1.1.1
+port = 1337
+timeout = 5
+
 # Set up connection
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.settimeout(timeout)
 connect = s.connect((ip,port))
-s.recv(1024)
 
 # Iterate fuzzing
 buffer = []
@@ -24,6 +27,3 @@ for string in buffer:
         print("Could not connect to " + ip + ":" + str(port))
         sys.exit(0)
     time.sleep(1)
-
-finally:
-        s.close()
