@@ -19,7 +19,7 @@ for string in buffer:
         connect = s.connect((ip, port))
         s.recv(1024)
         print("Fuzzing with %s bytes" % len(string))
-        s.send("OVERFLOW1 " + string + "\r\n")
+        s.send(string + "\r\n")
         s.recv(1024)
         s.close()
     except:
